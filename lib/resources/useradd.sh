@@ -184,7 +184,7 @@ function stdlib.useradd.create {
   stdlib.capture_error useradd $_createhome ${create_args[@]} "${options[user]}"
 
   if [[ -n ${options[sudo]} && ${options[sudo]} == "true" ]]; then
-    stdlib.capture_error "echo ${options[user]} ALL=(ALL) NOPASSWD:ALL > /etc/sudoers.d/${options[user]}"
+    stdlib.capture_error echo "${options[user]} ALL=(ALL) NOPASSWD:ALL > /etc/sudoers.d/${options[user]}"
   fi
 }
 
